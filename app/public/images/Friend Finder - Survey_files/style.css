@@ -59,15 +59,6 @@
   cursor: pointer;
 }
 
-#custom-handle {
-      width: 3em;
-      height: 1.6em;
-      top: 50%;
-      margin-top: -.8em;
-      text-align: center;
-      line-height: 1.6em;
-    }
-
 .range-slider {
   margin: 60px 0 0 0%;
 }
@@ -75,7 +66,7 @@
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1500; /* Sit on top */
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */

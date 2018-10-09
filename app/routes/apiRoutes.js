@@ -13,8 +13,10 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
   app.post("/api/friends", function(req, res) {
     // respond to requests and let users know if they have a friend
-      console.log(req.body);
-    
+      console.log("Recievied\n",req.body);
+      res.json(friendData[1]);
+      console.log(friendData[1]);
+
   });
 
 };

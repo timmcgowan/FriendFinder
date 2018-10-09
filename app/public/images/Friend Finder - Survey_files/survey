@@ -23,12 +23,24 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-    <!--      
+  <!--      
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
 
     <!-- Friend Finder Specific Style & JS -->
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/survey.js"></script>
+
+    <style>
+        #custom-handle {
+              width: 3em;
+              height: 1.6em;
+              top: 50%;
+              margin-top: -.8em;
+              text-align: center;
+              line-height: 1.6em;
+            }
+            </style>
+
 
     <script>
         $(function () {
@@ -96,8 +108,9 @@
 </head>
 
 <body>
+
     <div class="container">
-        <!-- Jumbotron Page -->
+
         <div class="jumbotron">
             <h1 class="text-center"><i class="fas fa-user-friends"></i> Find a friend!</h1>
 
@@ -111,12 +124,10 @@
                 <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
             </div>
         </div>
-        <!-- //END Jumbotron Page -->
 
-        <HR>
-        <!-- Survey Form  -->
         <div class="row">
             <div class="col-lg-12">
+                <!-- Reservation Page -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">Find a Friend Survey</h4>
@@ -195,33 +206,36 @@
                         <hr>
                     </div>
                 </div>
+
             </div>
-            <!-- //END ROW - Survey Form  -->
-            <footer class="footer">
-                <div class="container">
-                    <p><a href="/api/friends">API Table Link</a> | <a href="https://github.com/timmcgowan/FriendFinder">GitHub
-                            Repo</a></p>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Table Link</a> | <a href="https://github.com/timmcgowan/FriendFinder">GitHub
+                        Repo</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Display Friend Modal -->
+    <div id="friendModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Match - A potential new friend!</h1>
                 </div>
-            </footer>
+                <div class="modal-body">
+                    <h2 id="friendName"></h2>
+                    <img id="friendPhoto" src="#">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Display Friend Modal -->
-    <div id="friendModal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title">Match - A potential new friend!</h3>
-                    </div>
-                    <div class="modal-body">
-                        <h2 id="friendName"></h2>
-                        <img id="friendPhoto" src="#">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 </body>
 
 </html>
