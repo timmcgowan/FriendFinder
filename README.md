@@ -29,16 +29,15 @@ Current versions of
 1. Clone the repo.
 2. From the newly cloned FriendFinder directory, install required dependencies
 3. start node app.
+4. Open your browser and go to: *http://localhost:3000/*
 
+```console
 
-```bash
-
-git clone [thisrepo]
-cd FriendFinder
-npm install 
-node server.js
+user@host:~$ git clone [thisrepo]
+user@host:~$ cd FriendFinder
+user@host:~/FriendFinder$ npm install 
+user@host:~/FriendFinder$ node server.js
 
 ```
-
 
 **Good Luck!**
