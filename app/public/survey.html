@@ -39,6 +39,8 @@
                     var agree = "na";
                     var slideInput = $(this).attr("data");
                     console.log(slideInput);
+                    $('#' + slideInput).val(ui.value);
+                    $('#' + slideInput).hide();
                     if (ui.value === 1) {
                         agree = "strongly disagree";
                     } else if (ui.value === 2) {
@@ -52,10 +54,12 @@
                     } else {
                         agree = "blah";
                     }
-                    $('#' + slideInput).val(agree);
+                    // agreeSpan.text(agree); 
+                    $("label[for*="+ slideInput +"]").children('span').html(" " + agree);
                 }
             });
-            $("#" + slideInput).attr('for', slideInput).append("$" + $("#slider").slider("value"));
+            
+            // $("label[for*="+ slideInput +"]").append("$" + $("#slider").slider("value"));
         });
     </script>
     <script>
@@ -79,20 +83,6 @@
 
         rangeSlider();
     </script>
-    <!-- <script>
-        $( function() {
-          var handle = $( "#bigThinker" );
-          $( "#slider" ).slider({
-            create: function() {
-              handle.text( $( this ).slider( "value" ) );
-            },
-            slide: function( event, ui ) {
-              handle.text( ui.value );
-            }
-          });
-        } );
-        </script> -->
-
 </head>
 
 <body>
@@ -133,8 +123,8 @@
                             </div>
                             <hr>
                             <div class="form-group slidecontainer">
-                                <label for="bigThinker">1) You are constently thinking of new ideas.</label>
-                                <input type="text" id="bigThinker" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="bigThinker">1) You are constently thinking of new ideas :<span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="bigThinker" readonly style="border:0;">
                                 <div data="bigThinker" class="ui-slider-handle"></div>
 
                                 <!-- <div class="range-slider">
@@ -144,51 +134,49 @@
 
                             </div>
                             <div class="form-group slidecontainer">
-                                <label for="creative">2) You consider yourself creative. </label>
-                                <input type="text" id="creative" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="creative">2) You consider yourself creative : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="creative" readonly style="border:0;">
                                 <div data="creative" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>3) Your emotions are like a roller coaster </label>
-                                <input type="text" id="emotions" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="emotions">3) Your emotions are like a roller coaster : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="emotions" readonly style="border:0;">
                                 <div data="emotions" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>4) You eat meat</label>
-                                <input type="text" id="meat" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="meat">4) You eat meat : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="meat" readonly style="border:0;">
                                 <div data="meat" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>5) You consider yourself very "spiritual".</label>
-                                <input type="text" id="spiritual" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="spiritual">5) You consider yourself very "spiritual" : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="spiritual" readonly style="border:0;">
                                 <div data="spiritual" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>6) You enjoy being around large groups of people</label>
-                                <input type="text" id="lgroups" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="lgroups">6) You enjoy being around large groups of people : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="lgroups" readonly style="border:0;">
                                 <div data="lgroups" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>7) You prefer smaller groups of people.</label>
-                                <input type="text" id="sgroups" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="sgroups">7) You prefer smaller groups of people : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="sgroups" readonly style="border:0;">
                                 <div data="sgroups" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>8) You enjoy reading books. </label>
-                                <input type="text" id="books" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="books">8) You enjoy reading books : <span style="border:0; color:#f6931f; font-weight:bold;"></span> </label>
+                                <input type="text" id="books" readonly style="border:0;">
                                 <div data="books" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>9) You prefer typically prefer movies over the books.</label>
-                                <input type="text" id="movies" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                <label for="movies">9) You prefer typically prefer movies over the books <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="movies" readonly style="border:0;">
                                 <div data="movies" class="ui-slider-handle"></div>
                             </div>
                             <div class="form-group">
-                                <label>10) What does not kill you, makes you stonger!</label>
-                                <input type="text" id="stalwartness" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                                <div>Disagree</div>
+                                <label for="stalwartness">10) What does not kill you, makes you stonger! : <span style="border:0; color:#f6931f; font-weight:bold;"></span></label>
+                                <input type="text" id="stalwartness" readonly style="border:0;">
                                 <div data="stalwartness" class="ui-slider-handle"></div>
-                                <div>Agree</div>
                             </div>
                             <button type="submit" class="btn btn-primary submit">Submit</button>
                         </form>

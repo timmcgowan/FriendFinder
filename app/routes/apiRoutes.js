@@ -13,7 +13,7 @@ function compareObjects(obj1, ojb2) {
 
   let l1 = obj1.length;
   let l2 = ojb2.length;
-  if (l1 = l2) {  
+  if (l1 === l2) {  
       var ovalue = 0;
       for (var i = 0; i < l1; i++) {
           console.log(Math.abs(obj1[i] - ojb2[i]));
@@ -28,14 +28,18 @@ function compareObjects(obj1, ojb2) {
 // loop through friends to find best choice.
 function findFriend(newFriend){
   var fl = friendData.length;  
-  var nObj = newFriend.scores;
+  //var nObj = newFriend.scores;
   var bFriend = [];
   var lowestScore = 1500;
-  
+  console.log(newFriend);
   for (var i = 0; i < fl; i++){
       let candidate = friendData[i].scores;
-      if (compareObjects(candidate, newFriend.scores) < lowestScore){
+      let score = compareObjects(candidate, newFriend.scores) 
+      console.log("Comparing : " + newFriend.name + " against " + friendData[i].name);
+      if (score < lowestScore){
+          lowestScore = score;
           bFriend = friendData[i];
+          console.log("switching to friend " + bFriend.name);
       } 
   } 
   return bFriend;

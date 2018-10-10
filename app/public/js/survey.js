@@ -4,26 +4,26 @@
 // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
 // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
 $(document).ready(function () {
-  $(".submit").on("click", function (event) {
+    $(".submit").on("click", function (event) {
     event.preventDefault();
     this.blur(); // remove focus
     
+    let bigThinker = $("#bigThinker").val().trim();
+    let creative = $("#creative").val().trim();
+    let emotions = $("#emotions").val().trim();
+    let meat = $("#meat").val().trim();
+    let spiritual = $("#spiritual").val().trim();
+    let lgroups = $("#lgroups").val().trim();
+    let sgroups = $("#sgroups").val().trim();
+    let books = $("#books").val().trim();
+    let movies = $("#movies").val().trim();
+    let stalwartness = $("#stalwartness").val().trim();
+
     // Grab the form elements
     var newFriend = {
       customerName: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
-      scores: {
-        bigThinker: $("#bigThinker").val().trim(),
-        creative: $("#creative").val().trim(),
-        emotions: $("#emotions").val().trim(),
-        meat: $("#meat").val().trim(),
-        spiritual: $("#spiritual").val().trim(),
-        lgroups: $("#lgroups").val().trim(),
-        sgroups: $("#sgroups").val().trim(),
-        books: $("#books").val().trim(),
-        movies: $("#movies").val().trim(),
-        stalwartness: $("#stalwartness").val().trim(),
-      }
+      scores: [ bigThinker, creative, emotions, meat, spiritual, lgroups, sgroups, books, movies, stalwartness ]
     };
 
     console.log(newFriend);
